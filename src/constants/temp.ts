@@ -10,37 +10,28 @@ import type {
 import {
   mobile,
   backend,
-  creator,
   web,
   javascript,
   typescript,
   html,
   css,
   reactjs,
-  redux,
   tailwind,
   nodejs,
   mongodb,
   git,
-  figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
-  redis,
-  java,
-  kafka,
-  coreverse,
   integrate,
+  coreverse,
   almamate,
   fakeNews,
   website_monitoring,
   expense_tracker,
+  redis,
+  cassandra,
+  rabbitmq,
+  kafka,
+  java
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
@@ -95,10 +86,6 @@ const technologies: TTechnology[] = [
     icon: reactjs,
   },
   {
-    name: "Redis",
-    icon: redis,
-  },
-  {
     name: "Tailwind CSS",
     icon: tailwind,
   },
@@ -111,21 +98,33 @@ const technologies: TTechnology[] = [
     icon: mongodb,
   },
   {
-    name: "Java",
-    icon: java,
-  },
-  {
     name: "git",
     icon: git,
-  },
-  {
-    name: "kafka",
-    icon: kafka,
   },
   {
     name: "docker",
     icon: docker,
   },
+  {
+    name:"redis",
+    icon: redis
+  },
+  {
+    name:"kafka",
+    icon: kafka
+  },
+  {
+    name:"java",
+    icon: java
+  },
+  {
+    name:"rabbitmq",
+    icon: rabbitmq
+  },
+  {
+    name:"cassandra",
+    icon: cassandra
+  }
 ];
 
 const experiences: TExperience[] = [
@@ -156,6 +155,7 @@ const experiences: TExperience[] = [
     ],
   },
 ];
+
 
 const testimonials: TTestimonial[] = [
   {
@@ -245,7 +245,7 @@ const projects: TProject[] = [
     { name: "mongodb", color: "pink-text-gradient" },
     { name: "zustand", color: "blue-text-gradient" },
   ],
-  image: shopify,
+  image: integrate,
   sourceCodeLink: "https://webreact-21f64.web.app/",
 }
 

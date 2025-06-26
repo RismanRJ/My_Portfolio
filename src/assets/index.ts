@@ -27,7 +27,6 @@ import kafka from "./tech/kafka.webp";
 import java from "./tech/java.webp";
 
 import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
@@ -42,7 +41,7 @@ import almamate from "./tech/almamate.jpg";
 import fakeNews from "./tech/FakeNews.jpg";
 import website_monitoring from "./tech/website_monitoring.webp";
 import expense_tracker from "./tech/expense_tracker.webp";
-
+import shopify from "./tech/shopify.webp";
 export {
   logo,
   almamate,
