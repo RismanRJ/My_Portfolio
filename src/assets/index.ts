@@ -20,26 +20,48 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import redis from "./tech/redis.webp";
+import cassandra from "./tech/cassandra.webp";
+import rabbitmq from "./tech/rabbitmq.webp";
+import kafka from "./tech/kafka.webp";
+import java from "./tech/java.webp";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
+import integrate from "./company/integrate.jpg";
+import coreverse from "./company/coreverse.jpg";
+
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+import almamate from "./tech/almamate.jpg";
+import fakeNews from "./tech/FakeNews.jpg";
+import website_monitoring from "./tech/website_monitoring.webp";
+import expense_tracker from "./tech/expense_tracker.webp";
+
 export {
   logo,
+  almamate,
+  fakeNews,
+  website_monitoring,
+  expense_tracker,
   backend,
+  java,
   creator,
+  rabbitmq,
+  kafka,
   mobile,
   web,
+  cassandra,
   github,
   menu,
   close,
   css,
+  redis,
   docker,
   figma,
   git,
@@ -59,4 +81,6 @@ export {
   carrent,
   jobit,
   tripguide,
+  integrate,
+  coreverse
 };

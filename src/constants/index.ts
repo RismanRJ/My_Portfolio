@@ -10,28 +10,28 @@ import type {
 import {
   mobile,
   backend,
-  creator,
   web,
   javascript,
   typescript,
   html,
   css,
   reactjs,
-  redux,
   tailwind,
   nodejs,
   mongodb,
   git,
-  figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
+  integrate,
+  coreverse,
+  almamate,
+  fakeNews,
+  website_monitoring,
+  expense_tracker,
+  redis,
+  cassandra,
+  rabbitmq,
+  kafka,
+  java
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
@@ -51,21 +51,17 @@ export const navLinks: TNavLink[] = [
 
 const services: TService[] = [
   {
-    title: "Web Developer",
+    title: "Software Developer",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Frontend Developer",
     icon: mobile,
   },
   {
     title: "Backend Developer",
     icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
-  },
+  }
 ];
 
 const technologies: TTechnology[] = [
@@ -90,10 +86,6 @@ const technologies: TTechnology[] = [
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
     name: "Tailwind CSS",
     icon: tailwind,
   },
@@ -106,77 +98,64 @@ const technologies: TTechnology[] = [
     icon: mongodb,
   },
   {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
     name: "git",
     icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
   },
   {
     name: "docker",
     icon: docker,
   },
+  {
+    name:"redis",
+    icon: redis
+  },
+  {
+    name:"kafka",
+    icon: kafka
+  },
+  {
+    name:"java",
+    icon: java
+  },
+  {
+    name:"rabbitmq",
+    icon: rabbitmq
+  },
+  {
+    name:"cassandra",
+    icon: cassandra
+  }
 ];
 
 const experiences: TExperience[] = [
   {
-    title: "React.js Developer",
-    companyName: "Starbucks",
-    icon: starbucks,
+    title: "Software Developer Intern",
+    companyName: "Integrate Marketing Technologies",
+    icon: integrate,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "Jan 2025 - Apr 2025",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed a scalable hybrid API architecture using gRPC and REST, improving request-response performance by 30%.",
+      "Integrated Redis caching to handle high-frequency traffic and reduced latency by 15%.",
+      "Implemented rate limiting and used RabbitMQ with durability for resilient messaging, reducing request failures by 90%.",
+      "Focused on writing secure and scalable backend code using C# and .NET.",
     ],
   },
   {
-    title: "React Native Developer",
-    companyName: "Tesla",
-    icon: tesla,
+    title: "Software Developer Intern",
+    companyName: "Coreverse Pvt. Ltd",
+    icon: coreverse, 
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Nov 2023 - Mar 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Web Developer",
-    companyName: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    companyName: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Led frontend development of 'Docore' School Management System using Flutter and Dart.",
+      "Improved user satisfaction by 25% through responsive UI and seamless UX.",
+      "Collaborated with cross-functional teams and used Git/GitHub for efficient version control.",
+      "Integrated Firebase for real-time data updates and authentication.",
     ],
   },
 ];
+
 
 const testimonials: TTestimonial[] = [
   {
@@ -207,68 +186,71 @@ const testimonials: TTestimonial[] = [
 
 const projects: TProject[] = [
   {
-    name: "Car Rent",
+    name: "Almamate",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "A full-stack alumni-student engagement platform with real-time chat, event management, and secure role-based access. Enables seamless interaction between students, alumni, and faculty.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
+      { name: "react", color: "blue-text-gradient" },
+      { name: "nodejs", color: "green-text-gradient" },
+      { name: "websockets", color: "pink-text-gradient" },
+      { name: "mongodb", color: "green-text-gradient" },
     ],
-    image: carrent,
-    sourceCodeLink: "https://github.com/",
+    image: almamate,
+    sourceCodeLink: "https://github.com/RismanRJ/Almamate", 
   },
   {
-    name: "Job IT",
+    name: "Fake News Detector",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "An AI-powered system to classify news articles as real or fake using TF-IDF and Logistic Regression, with 98% accuracy. Features news summarization and language translation.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
+      { name: "python", color: "blue-text-gradient" },
+      { name: "flask", color: "green-text-gradient" },
+      { name: "react", color: "pink-text-gradient" },
+      { name: "ml", color: "blue-text-gradient" },
     ],
-    image: jobit,
-    sourceCodeLink: "https://github.com/",
+    image: fakeNews,
+    sourceCodeLink: "https://github.com/RismanRJ/Fake_news_detection", 
   },
   {
-    name: "Trip Guide",
+    name: "WebSite Monitoring",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A Java multi‑threaded website monitoring tool that periodically checks endpoint availability and response times concurrently using threads, logging results for analytics.",
     tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
+      { name: "java", color: "blue-text-gradient" },
+      { name: "multithreading", color: "green-text-gradient" },
+      { name: "logging", color: "pink-text-gradient" },
     ],
-    image: tripguide,
-    sourceCodeLink: "https://github.com/",
+    image: website_monitoring, 
+    sourceCodeLink: "https://github.com/RismanRJ/WebSite_Monitoring",
   },
+  {
+  name: "Expense Tracker",
+  description:
+    "A React-based single-page expense tracking app that allows users to manage multiple user profiles and categorize expenses. Features include add/edit/delete users and expenses, live updates to user totals, and a visual summary of spending by category.",
+  tags: [
+    { name: "react", color: "blue-text-gradient" },
+    { name: "styled_components", color: "pink-text-gradient" },
+    { name: ".Net MVC", color: "green-text-gradient" },
+  ],
+  image: expense_tracker, 
+  sourceCodeLink: "https://github.com/RismanRJ/Expense-Tracker",
+},
+{
+  name: "Shopify E‑commerce",
+  description:
+    "A full‑stack e‑commerce platform built with Node.js, Express, React, and MongoDB. Features include product listing, shopping cart, authentication, order processing, and an admin dashboard with inventory and user management.",
+  tags: [
+    { name: "react", color: "blue-text-gradient" },
+    { name: "nodejs", color: "green-text-gradient" },
+    { name: "mongodb", color: "pink-text-gradient" },
+    { name: "zustand", color: "blue-text-gradient" },
+  ],
+  image: integrate,
+  sourceCodeLink: "https://webreact-21f64.web.app/",
+}
+
+
 ];
+
 
 export { services, technologies, experiences, testimonials, projects };

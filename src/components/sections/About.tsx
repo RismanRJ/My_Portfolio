@@ -60,6 +60,14 @@ const About = () => {
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
+         <a
+        href="https://drive.google.com/uc?export=download&id=1_jHOvVkymWXXN1eYJSwKH3TkekPsfOQ1"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 px-5 py-2 mt-10 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300"
+      >
+        Download Resume
+      </a>
     </>
   );
 };
