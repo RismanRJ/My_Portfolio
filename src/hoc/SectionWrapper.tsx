@@ -16,11 +16,13 @@ const SectionWrapper = (
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}
-        className={`${styles.padding} relative z-0 w-full max-w-7xl mx-auto overflow-hidden`}
+        className={`relative z-0 w-full ${styles.paddingY}`}
         id={idName}
       >
-        <span className="hash-span block">&nbsp;</span>
-        <Component />
+        <div className={`mx-auto w-full ${styles.paddingX} max-w-7xl`}>
+          <span className="block h-0" />
+          <Component />
+        </div>
       </motion.section>
     );
   };
