@@ -25,13 +25,17 @@ import cassandra from "./tech/cassandra.webp";
 import rabbitmq from "./tech/rabbitmq.webp";
 import kafka from "./tech/kafka.webp";
 import java from "./tech/java.webp";
+import python from "./tech/python.svg";
+import go from "./tech/go.svg";
+import postgresql from "./tech/postgresql.svg";
+import aws from "./tech/aws.svg";
 
 import meta from "./company/meta.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
 import integrate from "./company/integrate.jpg";
-import coreverse from "./company/coreverse.jpg";
+import snitch from "./company/snitch.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -41,6 +45,8 @@ import almamate from "./tech/almamate.jpg";
 import fakeNews from "./tech/FakeNews.jpg";
 import website_monitoring from "./tech/website_monitoring.webp";
 import expense_tracker from "./tech/expense_tracker.webp";
+import sre_agent from "./tech/sre_agent.png";
+import agentic_scrapper from "./tech/agentic_scrapper.svg";
 import shopify from "./tech/shopify.webp";
 export {
   logo,
@@ -48,6 +54,8 @@ export {
   fakeNews,
   website_monitoring,
   expense_tracker,
+  sre_agent,
+  agentic_scrapper,
   backend,
   java,
   creator,
@@ -81,5 +89,9 @@ export {
   jobit,
   tripguide,
   integrate,
-  coreverse
+  snitch,
+  python,
+  go,
+  postgresql,
+  aws
 };

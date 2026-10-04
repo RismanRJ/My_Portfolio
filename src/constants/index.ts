@@ -25,12 +25,18 @@ import {
   redis,
   java,
   kafka,
-  coreverse,
+  snitch,
   integrate,
   almamate,
   fakeNews,
   website_monitoring,
   expense_tracker,
+  sre_agent,
+  agentic_scrapper,
+  python,
+  go,
+  postgresql,
+  aws,
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
@@ -109,6 +115,22 @@ const technologies: TTechnology[] = [
     icon: git,
   },
   {
+    name: "Python",
+    icon: python,
+  },
+  {
+    name: "Go",
+    icon: go,
+  },
+  {
+    name: "PostgreSQL",
+    icon: postgresql,
+  },
+  {
+    name: "AWS",
+    icon: aws,
+  },
+  {
     name: "kafka",
     icon: kafka,
   },
@@ -120,29 +142,30 @@ const technologies: TTechnology[] = [
 
 const experiences: TExperience[] = [
   {
-    title: "Software Developer Intern",
-    companyName: "Integrate Marketing Technologies",
-    icon: integrate,
-    iconBg: "#383E56",
-    date: "Jan 2025 - Apr 2025",
+    title: "Software Engineer (Backend)",
+    companyName: "Snitch",
+    icon: snitch,
+    iconBg: "#E6DEDD",
+    date: "July 2025 - Present",
     points: [
-      "Developed a scalable hybrid API architecture using gRPC and REST, improving request-response performance by 30%.",
-      "Integrated Redis caching to handle high-frequency traffic and reduced latency by 15%.",
-      "Implemented rate limiting and used RabbitMQ with durability for resilient messaging, reducing request failures by 90%.",
-      "Focused on writing secure and scalable backend code using C# and .NET.",
+      "Built a real-time order allocation engine for same-day and next-day delivery, evaluating 20M+ routing combinations at p95 218ms on indexed PostgreSQL.",
+      "Lifted SDD from 17% to 27% and NDD from 40% to 55% through allocation optimization, multi-delivery-partner handling and tie-breaker rules.",
+      "Owned the migration to an in-house data platform (Airbyte, Airflow, dbt, Redshift) on EKS, and moved backend servers from AWS App Runner to ECS with zero downtime.",
+      "Re-architected the quick-commerce serviceability API with cache-first lookups, cutting Google Maps calls 94% and p95 latency from 578ms to 107ms.",
+      "Led technical SEO fixes on a Next.js storefront and built Style Bot, an LLM-powered shopping assistant.",
     ],
   },
   {
-    title: "Software Developer Intern",
-    companyName: "Coreverse Pvt. Ltd",
-    icon: coreverse, 
-    iconBg: "#E6DEDD",
-    date: "Nov 2023 - Mar 2024",
+    title: "Backend Engineer",
+    companyName: "Integrate Marketing Technologies",
+    icon: integrate,
+    iconBg: "#383E56",
+    date: "Jan 2025 - Jun 2025",
     points: [
-      "Led frontend development of 'Docore' School Management System using Flutter and Dart.",
-      "Improved user satisfaction by 25% through responsive UI and seamless UX.",
-      "Collaborated with cross-functional teams and used Git/GitHub for efficient version control.",
-      "Integrated Firebase for real-time data updates and authentication.",
+      "Architected a hybrid gRPC + REST API layer with binary serialization, reducing latency 30% (450ms to 315ms).",
+      "Implemented RabbitMQ async messaging with dead-letter queues and idempotency guards, achieving 99.9% delivery guarantee.",
+      "Engineered multi-tier Redis caching, reducing database load 58% and latency from 480ms to 140ms for 50K+ daily orders.",
+      "Built a distributed token-bucket rate limiter that prevented cascading failures during 10x traffic spikes, reducing failures 90%.",
     ],
   },
 ];
@@ -175,6 +198,32 @@ const testimonials: TTestimonial[] = [
 ];
 
 const projects: TProject[] = [
+  {
+    name: "SRE On-Call Agent",
+    description:
+      "An autonomous incident monitor that pulls metrics from New Relic, CloudWatch, Aurora PostgreSQL, Redis and Elasticsearch, checks them against per-service thresholds, and runs LLM-based root-cause analysis on every breach.",
+    tags: [
+      { name: "python", color: "blue-text-gradient" },
+      { name: "fastapi", color: "green-text-gradient" },
+      { name: "ollama", color: "pink-text-gradient" },
+      { name: "docker", color: "blue-text-gradient" },
+    ],
+    image: sre_agent,
+    sourceCodeLink: "https://github.com/RismanRJ/SRE-Oncall-Agent",
+  },
+  {
+    name: "Agentic Scrapper",
+    description:
+      "A sandboxed web scraping platform where an LLM drafts the extraction config, an admin approves it, and each job runs in an ephemeral container behind an allowlisting egress proxy. Go gateway, Celery workers and CLIP-based moodboards.",
+    tags: [
+      { name: "go", color: "blue-text-gradient" },
+      { name: "celery", color: "green-text-gradient" },
+      { name: "pgvector", color: "pink-text-gradient" },
+      { name: "playwright", color: "blue-text-gradient" },
+    ],
+    image: agentic_scrapper,
+    sourceCodeLink: "https://github.com/RismanRJ/Agentic-scrapper",
+  },
   {
     name: "Almamate",
     description:
