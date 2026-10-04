@@ -46,7 +46,7 @@ export const config: TConfig = {
   },
   hero: {
     name: "Risman J",
-p: ["I build scalable backend systems,", "interactive user interfaces and full stack web applications"],
+p: ["I build low-latency, event-driven backend systems", "and AI-powered tools on Node.js, Python and AWS"],
 
   },
   contact: {
@@ -68,11 +68,9 @@ p: ["I build scalable backend systems,", "interactive user interfaces and full s
   about: {
     p: "Get to know me",
     h2: "Overview.",
-    content: `I'm a passionate Software Developer with hands-on experience in backend and full stack development.
-    Proficient in Java, C#, JavaScript, and TypeScript, with expertise in frameworks like React.js, Node.js, and .NET.
-    I've built scalable APIs using REST and gRPC, optimized performance with Redis, and secured systems with OAuth and JWT.
-    With a strong foundation in system design, databases like MongoDB, SQL, and Firebase, and real-world project experience,
-    I'm eager to solve meaningful problems and grow in a dynamic tech environment.`,
+    content: `Backend Software Engineer with 1.5+ years of experience building low-latency, event-driven systems with Node.js, Python, PostgreSQL, Redis and AWS.
+    I built a real-time order allocation engine to speed up same-day and next-day delivery, and owned an in-house data platform migration
+    (Airbyte, Airflow, dbt, Redshift) from design to production. 3rd place at the TNCPL AI Hackathon among 82,000+ participants.`,
   },
   experience: {
     p: "Where I've worked",
