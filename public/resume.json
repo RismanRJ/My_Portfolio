@@ -1,0 +1,72 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Risman J",
+    "label": "Backend Software Engineer",
+    "email": "rismanshanker21@gmail.com",
+    "url": "https://risman-portfolio.vercel.app/",
+    "summary": "Backend Software Engineer with 1.5+ years of experience building low-latency, event-driven systems with Node.js, Python, PostgreSQL, Redis and AWS.",
+    "location": { "city": "Bangalore", "region": "Karnataka", "countryCode": "IN" },
+    "profiles": [
+      { "network": "GitHub", "url": "https://github.com/RismanRJ" },
+      { "network": "LinkedIn", "url": "https://www.linkedin.com/in/risman21/" },
+      { "network": "LeetCode", "url": "https://leetcode.com/u/rismanshanker21/" }
+    ]
+  },
+  "work": [
+    {
+      "name": "Snitch",
+      "position": "Software Engineer (Backend)",
+      "startDate": "2025-07",
+      "summary": "Node.js, Python, PostgreSQL, Redis, Airflow, dbt, Redshift, AWS (ECS/EKS)",
+      "highlights": [
+        "Built a real-time order allocation engine for same-day and next-day delivery, evaluating 20M+ routing combinations at p95 218ms on indexed PostgreSQL.",
+        "Lifted SDD from 17% to 27% and NDD from 40% to 55% through allocation optimization, multi-delivery-partner handling and tie-breaker rules.",
+        "Owned the migration to an in-house data platform (Airbyte, Airflow, dbt, Redshift) on EKS; moved backend servers from AWS App Runner to ECS with zero downtime.",
+        "Re-architected the quick-commerce serviceability API with cache-first lookups, cutting Google Maps calls 94% and p95 latency from 578ms to 107ms.",
+        "Led technical SEO fixes on a Next.js storefront and built Style Bot, an LLM-powered shopping assistant."
+      ]
+    },
+    {
+      "name": "Integrate Marketing Technologies",
+      "position": "Backend Engineer",
+      "startDate": "2025-01",
+      "endDate": "2025-06",
+      "summary": "C#, .NET, Docker, Redis, RabbitMQ, gRPC, REST API",
+      "highlights": [
+        "Architected a hybrid gRPC + REST API layer with binary serialization, reducing latency 30% (450ms to 315ms).",
+        "Implemented RabbitMQ async messaging with dead-letter queues and idempotency guards, achieving 99.9% delivery guarantee.",
+        "Engineered multi-tier Redis caching, reducing database load 58% and latency from 480ms to 140ms for 50K+ daily orders.",
+        "Built a distributed token-bucket rate limiter that prevented cascading failures during 10x traffic spikes, reducing failures 90%."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "K S Rangasamy College of Technology",
+      "studyType": "B.Tech",
+      "area": "Information Technology",
+      "startDate": "2021-10",
+      "endDate": "2025-04",
+      "score": "9.44 CGPA"
+    }
+  ],
+  "projects": [
+    { "name": "SRE On-Call Agent", "description": "Autonomous incident monitor with LLM-based root-cause analysis (Python, FastAPI, Ollama, New Relic, CloudWatch).", "url": "https://github.com/RismanRJ/SRE-Oncall-Agent" },
+    { "name": "Agentic Scrapper", "description": "Sandboxed web scraping platform where an LLM drafts extraction configs and an admin approves them (Go, Python, Celery, pgvector, Playwright). Repository not public." },
+    { "name": "Almamate", "description": "Alumni-student engagement platform with real-time chat (React, Node.js, WebSockets, MongoDB).", "url": "https://github.com/RismanRJ/Almamate" },
+    { "name": "Fake News Detector", "description": "TF-IDF + Logistic Regression classifier, 98% accuracy (Python, Flask, React).", "url": "https://github.com/RismanRJ/Fake_news_detection" },
+    { "name": "Website Monitoring", "description": "Multi-threaded Java endpoint availability and response time monitor.", "url": "https://github.com/RismanRJ/WebSite_Monitoring" },
+    { "name": "Expense Tracker", "description": "React expense tracking app with multiple user profiles (React, styled-components, .NET MVC).", "url": "https://github.com/RismanRJ/Expense-Tracker" }
+  ],
+  "awards": [
+    { "title": "TNCPL AI Hackathon, 3rd place", "date": "2024-04", "summary": "Ranked among 82,000+ participants; awarded INR 20,000." }
+  ],
+  "skills": [
+    { "name": "Languages", "keywords": ["Node.js", "Python", "Go", "TypeScript", "JavaScript", "C#", "Java", "SQL"] },
+    { "name": "Backend", "keywords": ["REST", "gRPC", "Microservices", "Event-driven architecture", "RabbitMQ", "Kafka", "Celery", "Caching", "Rate limiting"] },
+    { "name": "Databases", "keywords": ["PostgreSQL", "Redis", "MongoDB", "Amazon Redshift", "Elasticsearch"] },
+    { "name": "Cloud and DevOps", "keywords": ["AWS (S3, ECS, EKS, RDS)", "Docker", "Kubernetes", "New Relic", "CloudWatch"] },
+    { "name": "AI", "keywords": ["LLM applications", "Agentic workflows", "RCA", "MCP", "Ollama"] }
+  ]
+}
