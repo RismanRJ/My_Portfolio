@@ -134,7 +134,7 @@ const ThemePicker = ({ theme, setTheme }: { theme: string; setTheme: (t: string)
   );
 };
 
-const Navbar = ({ onResume, theme, setTheme }: { onResume: () => void; theme: string; setTheme: (t: string) => void }) => {
+const Navbar = ({ onResume, onAgent, theme, setTheme }: { onResume: () => void; onAgent: () => void; theme: string; setTheme: (t: string) => void }) => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 24 });
   const tabs = [...navLinks.map((n) => ({ id: n.id, label: n.title.toLowerCase() })), { id: "skills", label: "stack" }];
@@ -153,6 +153,11 @@ const Navbar = ({ onResume, theme, setTheme }: { onResume: () => void; theme: st
               </a>
             </li>
           ))}
+          <li>
+            <button onClick={onAgent} className="rounded border border-[rgb(var(--fg-rgb)/0.2)] px-2 py-1.5 hover:bg-[rgb(var(--fg-rgb)/0.1)]">
+              agent
+            </button>
+          </li>
           <li>
             <ThemePicker theme={theme} setTheme={setTheme} />
           </li>
@@ -417,6 +422,38 @@ const Footer = () => (
   </footer>
 );
 
+const AgentView = ({ onExit }: { onExit: () => void }) => {
+  const [json, setJson] = useState("loading...");
+  const [copied, setCopied] = useState(false);
+  useEffect(() => {
+    fetch("/resume.json")
+      .then((r) => r.text())
+      .then(setJson)
+      .catch(() => setJson("Could not load /resume.json"));
+  }, []);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(json);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {}
+  };
+  return (
+    <main className="mx-auto max-w-4xl px-5 py-10 text-xs">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <p className="text-[var(--ink)]"><span className="text-[var(--accent)]">$</span> curl {window.location.origin}/resume.json</p>
+        <div className="flex items-center gap-2">
+          <a href="/llms.txt" className="rounded border border-[rgb(var(--fg-rgb)/0.2)] px-3 py-1.5 hover:bg-[rgb(var(--fg-rgb)/0.1)]">llms.txt</a>
+          <a href="/resume.json" className="rounded border border-[rgb(var(--fg-rgb)/0.2)] px-3 py-1.5 hover:bg-[rgb(var(--fg-rgb)/0.1)]">raw json</a>
+          <button onClick={copy} className="rounded bg-[var(--accent)] px-3 py-1.5 font-bold text-[var(--on-accent)]">{copied ? "copied" : "copy"}</button>
+          <button onClick={onExit} className="rounded border border-[rgb(var(--fg-rgb)/0.2)] px-3 py-1.5 hover:bg-[rgb(var(--fg-rgb)/0.1)]">human view</button>
+        </div>
+      </div>
+      <pre className="mt-6 overflow-x-auto rounded-lg border border-[rgb(var(--fg-rgb)/0.15)] bg-[var(--surface)] p-5 leading-6">{json}</pre>
+    </main>
+  );
+};
+
 const ResumeModal = ({ onClose }: { onClose: () => void }) => {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -446,13 +483,21 @@ const ResumeModal = ({ onClose }: { onClose: () => void }) => {
 const App = () => {
   const [showResume, setShowResume] = useState(false);
   const [theme, setTheme] = useTheme();
+  const [agent, setAgent] = useState(() => new URLSearchParams(window.location.search).get("mode") === "agent");
+  const setMode = (on: boolean) => {
+    setAgent(on);
+    window.history.replaceState(null, "", on ? "/?mode=agent" : "/");
+    window.scrollTo(0, 0);
+  };
   useEffect(() => {
     document.title = config.html.title;
   }, []);
 
+  if (agent) return <AgentView onExit={() => setMode(false)} />;
+
   return (
     <>
-      <Navbar onResume={() => setShowResume(true)} theme={theme} setTheme={setTheme} />
+      <Navbar onAgent={() => setMode(true)} onResume={() => setShowResume(true)} theme={theme} setTheme={setTheme} />
       <main>
         <Hero onResume={() => setShowResume(true)} />
         <About />

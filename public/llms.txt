@@ -1,0 +1,35 @@
+# Risman J
+
+> Backend Software Engineer (1.5+ years) based in Bangalore, India. Builds low-latency, event-driven systems with Node.js, Python, PostgreSQL, Redis and AWS. Currently Software Engineer (Backend) at Snitch.
+
+Machine-readable resume: https://risman-portfolio.vercel.app/resume.json
+Human site: https://risman-portfolio.vercel.app/
+Agent view: https://risman-portfolio.vercel.app/?mode=agent
+
+## Contact
+- Email: rismanshanker21@gmail.com
+- GitHub: https://github.com/RismanRJ
+- LinkedIn: https://www.linkedin.com/in/risman21/
+- LeetCode: https://leetcode.com/u/rismanshanker21/
+
+## Experience
+- Snitch, Software Engineer (Backend), July 2025 - Present: real-time order allocation engine (20M+ routing combinations, p95 218ms); lifted same-day delivery 17% to 27% and next-day 40% to 55%; owned migration to an in-house data platform (Airbyte, Airflow, dbt, Redshift) on EKS; moved backend servers from AWS App Runner to ECS with zero downtime; cut Google Maps calls 94% and serviceability p95 from 578ms to 107ms; technical SEO on a Next.js storefront; built Style Bot, an LLM-powered shopping assistant.
+- Integrate Marketing Technologies, Backend Engineer, Jan 2025 - Jun 2025: hybrid gRPC + REST API layer (latency 450ms to 315ms); RabbitMQ with dead-letter queues and idempotency guards (99.9% delivery); multi-tier Redis caching (DB load -58%, latency 480ms to 140ms); distributed token-bucket rate limiter (failures -90%).
+
+## Projects
+- SRE On-Call Agent: autonomous incident monitor with LLM root-cause analysis. https://github.com/RismanRJ/SRE-Oncall-Agent
+- Agentic Scrapper: sandboxed web scraping platform with LLM-drafted extraction configs (repository not public).
+- Almamate: alumni-student engagement platform with real-time chat. https://github.com/RismanRJ/Almamate
+- Fake News Detector: TF-IDF + Logistic Regression classifier, 98% accuracy. https://github.com/RismanRJ/Fake_news_detection
+- Website Monitoring: multi-threaded Java endpoint monitor. https://github.com/RismanRJ/WebSite_Monitoring
+- Expense Tracker: React expense tracking app. https://github.com/RismanRJ/Expense-Tracker
+
+## Skills
+Node.js, Python, Go, TypeScript, JavaScript, C#, Java, SQL, Next.js, React, REST, gRPC, microservices, event-driven architecture, RabbitMQ, Kafka, Celery, PostgreSQL, Redis, MongoDB, Redshift, Elasticsearch, AWS (S3, ECS, EKS, RDS), Docker, Kubernetes, New Relic, CloudWatch, LLM applications, agentic workflows, MCP.
+
+## Achievements
+- 3rd place, TNCPL AI Hackathon (April 2024), among 82,000+ participants
+- LeetCode rating 1594, 400+ problems solved
+
+## Education
+B.Tech Information Technology, K S Rangasamy College of Technology, Oct 2021 - Apr 2025, CGPA 9.44
