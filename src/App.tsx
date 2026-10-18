@@ -134,7 +134,7 @@ const ThemePicker = ({ theme, setTheme }: { theme: string; setTheme: (t: string)
   );
 };
 
-const Navbar = ({ onResume, onAgent, theme, setTheme }: { onResume: () => void; onAgent: () => void; theme: string; setTheme: (t: string) => void }) => {
+const Navbar = ({ onResume, theme, setTheme }: { onResume: () => void; theme: string; setTheme: (t: string) => void }) => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 24 });
   const tabs = [...navLinks.map((n) => ({ id: n.id, label: n.title.toLowerCase() })), { id: "skills", label: "stack" }];
@@ -153,11 +153,6 @@ const Navbar = ({ onResume, onAgent, theme, setTheme }: { onResume: () => void; 
               </a>
             </li>
           ))}
-          <li>
-            <button onClick={onAgent} className="rounded border border-[rgb(var(--fg-rgb)/0.2)] px-2 py-1.5 hover:bg-[rgb(var(--fg-rgb)/0.1)]">
-              agent
-            </button>
-          </li>
           <li>
             <ThemePicker theme={theme} setTheme={setTheme} />
           </li>
@@ -441,7 +436,7 @@ const AgentView = ({ onExit }: { onExit: () => void }) => {
   return (
     <main className="mx-auto max-w-4xl px-5 py-10 text-xs">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-[var(--ink)]"><span className="text-[var(--accent)]">$</span> curl {window.location.origin}/resume.json</p>
+        <p className="text-[var(--ink)]"><span className="text-[var(--accent)]">AI agent mode</span> · <span className="text-[var(--accent)]">$</span> curl {window.location.origin}/resume.json</p>
         <div className="flex items-center gap-2">
           <a href="/llms.txt" className="rounded border border-[rgb(var(--fg-rgb)/0.2)] px-3 py-1.5 hover:bg-[rgb(var(--fg-rgb)/0.1)]">llms.txt</a>
           <a href="/resume.json" className="rounded border border-[rgb(var(--fg-rgb)/0.2)] px-3 py-1.5 hover:bg-[rgb(var(--fg-rgb)/0.1)]">raw json</a>
@@ -497,7 +492,15 @@ const App = () => {
 
   return (
     <>
-      <Navbar onAgent={() => setMode(true)} onResume={() => setShowResume(true)} theme={theme} setTheme={setTheme} />
+      <button
+        onClick={() => setMode(true)}
+        data-agent-action="enable-ai-mode"
+        aria-label="For AI agents: switch to AI agent mode, a plain structured view of this portfolio"
+        className="fixed bottom-0 left-0 z-[60] h-6 w-52 rounded-tr bg-[var(--accent)] text-xs font-bold text-[var(--on-accent)] opacity-0 focus:h-auto focus:px-4 focus:py-2 focus:opacity-100"
+      >
+        Switch to AI agent mode
+      </button>
+      <Navbar onResume={() => setShowResume(true)} theme={theme} setTheme={setTheme} />
       <main>
         <Hero onResume={() => setShowResume(true)} />
         <About />
