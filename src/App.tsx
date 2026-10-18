@@ -24,8 +24,9 @@ const stats = [
   { value: "81%", label: "lower serviceability p95" },
 ];
 
-const Reveal = ({ children, delay = 0 }: { children: ReactNode; delay?: number }) => (
+const Reveal = ({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) => (
   <motion.div
+    className={className}
     initial={{ opacity: 0, y: 28 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-50px" }}
@@ -147,7 +148,7 @@ const Navbar = ({ onResume, theme, setTheme }: { onResume: () => void; theme: st
         </a>
         <ul className="flex items-center gap-1 sm:gap-3">
           {tabs.map((t) => (
-            <li key={t.id}>
+            <li key={t.id} className="hidden sm:block">
               <a href={`#${t.id}`} className="rounded px-2 py-1 transition-colors hover:bg-[rgb(var(--fg-rgb)/0.1)] hover:text-[var(--ink)]">
                 {t.label}
               </a>
@@ -224,34 +225,30 @@ const others = services.filter((s) => s !== primary);
 
 const About = () => (
   <Section id="about" file={`about.md — ${config.sections.about.p.toLowerCase()}`} title={config.sections.about.h2.replace(".", "")}>
-    <div className="grid gap-4 md:grid-cols-4">
-      <Reveal>
-        <div className="h-full rounded-lg border border-[rgb(var(--fg-rgb)/0.15)] bg-[var(--surface)] p-6 md:col-span-2">
-          <p className="relative text-sm leading-7">{config.sections.about.content}</p>
+    <Reveal>
+      <div className="hard flex flex-wrap items-center gap-5 rounded-lg border border-[var(--accent)] bg-[var(--surface)] p-6">
+        <img src={primary.icon} alt="" className="h-14 w-14 object-contain" />
+        <div>
+          <p className="text-xs text-[rgb(var(--fg-rgb)/0.5)]">primary role</p>
+          <p className="font-['Space_Grotesk'] text-2xl font-bold text-[var(--ink)] sm:text-4xl">Backend Software Engineer</p>
+          <p className="mt-1 text-xs text-[rgb(var(--fg-rgb)/0.5)]">also: {others.map((o) => o.title).join(" · ")}</p>
         </div>
+      </div>
+    </Reveal>
+    <div className="mt-10 grid items-start gap-8 lg:grid-cols-5">
+      <Reveal className="lg:col-span-3">
+        <p className="text-sm leading-8">{config.sections.about.content}</p>
       </Reveal>
-      <div className="grid grid-cols-2 gap-4 md:col-span-2">
+      <div className="grid grid-cols-2 gap-4 lg:col-span-2">
         {stats.map((s, i) => (
           <Reveal key={s.label} delay={i * 0.08}>
-            <div className="hard h-full rounded-lg border border-[rgb(var(--fg-rgb)/0.15)] bg-[var(--surface)] p-5">
-              <p className="font-['Space_Grotesk'] text-4xl font-bold text-[var(--accent)]">{s.value}</p>
-              <p className="mt-2 text-xs text-[rgb(var(--fg-rgb)/0.5)]">{s.label}</p>
+            <div className="rounded-lg border border-[rgb(var(--fg-rgb)/0.15)] bg-[var(--surface)] p-4">
+              <p className="font-['Space_Grotesk'] text-3xl font-bold text-[var(--accent)]">{s.value}</p>
+              <p className="mt-1 text-xs leading-5 text-[rgb(var(--fg-rgb)/0.5)]">{s.label}</p>
             </div>
           </Reveal>
         ))}
       </div>
-      <Reveal>
-        <div className="hard h-full rounded-lg border border-[var(--accent)] bg-[var(--surface)] p-6 md:col-span-4">
-          <p className="text-xs text-[rgb(var(--fg-rgb)/0.5)]">primary role</p>
-          <div className="mt-3 flex flex-wrap items-center gap-4">
-            <img src={primary.icon} alt="" className="h-12 w-12 object-contain" />
-            <p className="font-['Space_Grotesk'] text-3xl font-bold text-[var(--ink)]">Backend Software Engineer</p>
-          </div>
-          <p className="mt-4 text-xs text-[rgb(var(--fg-rgb)/0.5)]">
-            also: {others.map((o) => o.title).join(" · ")}
-          </p>
-        </div>
-      </Reveal>
     </div>
   </Section>
 );
