@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { Analytics } from "@vercel/analytics/react";
 
 import { config } from "./constants/config";
 import { navLinks, services, technologies, experiences, projects } from "./constants";
@@ -508,6 +509,7 @@ const App = () => {
       </main>
       <Footer />
       {showResume && <ResumeModal onClose={() => setShowResume(false)} />}
+      <Analytics />
     </>
   );
 };
